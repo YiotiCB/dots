@@ -1,0 +1,44 @@
+{
+    "layer": "bottom",
+    "position": "top",
+    "height": 30,
+
+    "modules-left": ["sway/workspaces"],
+    "modules-right": ["custom/spotify", "backlight", "pulseaudio", "battery", "clock"],
+    "sway/workspaces": {
+        "format": "{name}",
+        "disable-scroll": true
+    },
+    "clock": {
+        "format": "{:%R}",
+        "tooltip": false
+    },
+    "battery": {
+        "format": "{capacity}% {icon}",
+        "format-icons": ["", "", "", "", ""],
+        "format-charging": "{capacity}% ",
+        "interval": 30,
+        "tooltip": false
+    },
+    "pulseaudio": {
+        "format": "{volume}% {icon}",
+        "format-muted": "0% ",
+        "format-icons": ["", "", ""],
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "tooltip": false
+    },
+    "custom/spotify": {
+        "format": " {}",
+        "max-length": 40,
+        "interval": 1,
+        "exec": "$HOME/.config/waybar/modules/playerstatus.sh 2> /dev/null",
+        "exec-if": "pgrep spotify",
+	"on-click": "$HOME/.config/waybar/modules/playpause.sh",
+    "tooltip": false
+    },
+    "backlight": {
+        "format": "{percent}% {icon}",
+        "format-icons": ["󰃞","󰃟", "󰃠"],
+        "tooltip": false
+    }
+}
