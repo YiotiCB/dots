@@ -145,6 +145,11 @@ return {
       -- tsserver = {},
       --
 
+      rust_analyzer = {
+        settings = {
+          ['rust-analyzer'] = {},
+        },
+      },
       lua_ls = {
         -- cmd = {...},
         -- filetypes { ...},
