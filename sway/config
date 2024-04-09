@@ -197,5 +197,6 @@ bar {
 bindswitch --reload --locked lid:on output $laptop disable
 bindswitch --reload --locked lid:off output $laptop enable
 exec_always ./scripts/clamshell.sh
+exec_always gammastep 
 
 include /etc/sway/config.d/*
